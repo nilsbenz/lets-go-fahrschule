@@ -20,6 +20,40 @@
   --border-radius: 3px;
 }
 
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  10% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(8vh);
+  }
+
+  10% {
+    opacity: 0;
+    transform: translateY(8vh);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 html,
 body {
   margin: 0;
@@ -46,7 +80,6 @@ body {
 .heading-section .heading-container {
   display: flex;
   align-items: center;
-  transform-origin: bottom center;
   letter-spacing: 0.6px;
 }
 
@@ -83,7 +116,6 @@ body {
   font-size: min(7.6vw, 46px);
   color: var(--green-medium);
   margin: min(16px, 3vw) 0 100px;
-  transform-origin: top center;
   font-weight: 600;
   letter-spacing: 0.4px;
 }
@@ -93,23 +125,6 @@ body {
   animation-duration: 2s;
   animation-name: reveal;
   animation-timing-function: ease;
-}
-
-@keyframes reveal {
-  0% {
-    opacity: 0;
-    transform: scale(0.6);
-  }
-
-  10% {
-    opacity: 0;
-    transform: scale(0.6);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 
 .panel-container {
@@ -149,6 +164,9 @@ body {
   letter-spacing: 0.6px;
   margin: var(--spacing-05) 0;
   color: inherit;
+  animation-duration: 1.5s;
+  animation-name: slide-up;
+  animation-timing-function: ease;
 }
 
 .panel-dark p {
