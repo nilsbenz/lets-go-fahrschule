@@ -7,7 +7,7 @@
   --blue: #004589;
   --typography-light: #fff;
   --typography-dark: #000;
-  --box-shadow-small: 0 8px 16px 1px rgba(0, 0, 0, 0.25);
+  --box-shadow: 0 8px 16px 1px rgba(0, 0, 0, 0.25);
   --spacing-05: 4px;
   --spacing-1: 8px;
   --spacing-2: 16px;
@@ -59,7 +59,7 @@ body {
   align-items: center;
   border-radius: var(--border-radius);
   font-size: min(29vw, 180px);
-  box-shadow: var(--box-shadow-small);
+  box-shadow: var(--box-shadow);
   color: var(--typography-light);
   margin: min(2vw, 14px) min(7vw, 40px) 0 0;
   font-weight: 600;
@@ -112,11 +112,18 @@ body {
   }
 }
 
+.panel-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .panel {
   width: calc(100% - var(--spacing-8));
-  padding: var(--spacing-4);
-  border-bottom-left-radius: var(--spacing-2);
-  border-bottom-right-radius: var(--spacing-2);
+  padding: calc(var(--spacing-4) + 24px) var(--spacing-4) var(--spacing-4);
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  margin-bottom: -24px;
+  box-shadow: var(--box-shadow);
 }
 
 .panel-dark {
@@ -129,15 +136,19 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transform: translateZ(3px);
+  z-index: 19;
+  padding: var(--spacing-4);
+  color: var(--typography-light);
 }
 
 .panel-dark a {
   text-decoration: none;
-  color: var(--typography-light);
   font-family: 'Staatliches', Arial, Helvetica, sans-serif;
   font-size: min(6vw, 24px);
   letter-spacing: 0.6px;
   margin: var(--spacing-05) 0;
+  color: inherit;
 }
 
 .panel-dark p {
@@ -146,12 +157,22 @@ body {
 
 .panel-medium-dark {
   background-color: var(--green-medium-dark);
+  transform: translateZ(2px);
+  z-index: 18;
+  color: var(--typography-light);
 }
 
 .panel-medium {
   background-color: var(--green-medium);
+  transform: translateZ(1px);
+  z-index: 17;
+  color: var(--typography-light);
 }
 
 .panel-medium-light {
   background-color: var(--green-medium-light);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 0;
+  color: var(--typography-dark);
 }
