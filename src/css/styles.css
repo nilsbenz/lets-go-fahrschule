@@ -156,6 +156,7 @@ body {
   letter-spacing: 0.4px;
   font-weight: 400;
   margin: 0;
+  line-height: 100%;
 }
 
 .panel h4 {
@@ -164,10 +165,19 @@ body {
   letter-spacing: 0.2px;
   font-weight: 400;
   margin: 0;
+  line-height: 100%;
 }
 
 .panel p {
   line-height: 150%;
+}
+
+.withOne::after {
+  content: '1';
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 96%;
+  font-weight: 600;
+  margin-left: max(-12px, -2vw);
 }
 
 .panel-dark {
@@ -221,20 +231,27 @@ body {
   margin-top: var(--spacing-1);
   display: flex;
   flex-direction: column;
+  width: calc(100% + 24px);
+  transform: translateX(-12px);
 }
 
 .card {
   padding: var(--spacing-2) var(--spacing-2) 0;
   border-radius: var(--border-radius);
-  width: calc(100% + 8px);
-  transform: translateX(-20px);
   margin: var(--spacing-2) 0;
 }
 
 .card:nth-child(2n + 1) {
   background-color: var(--green-dark);
   box-shadow: var(--box-shadow);
-  transition: box-shadow 0.25s ease;
+}
+
+.card-big-start {
+  grid-column: 1 / -2;
+}
+
+.card-big-end {
+  grid-column: 2 / -1;
 }
 
 .card-full-width {
@@ -243,7 +260,6 @@ body {
 
 .panel-medium-dark h4 {
   margin: 0 0 16px;
-  line-height: 100%;
 }
 
 .table {
@@ -337,7 +353,7 @@ body {
 
 .impressum-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
 }
 
 .impressum-card {
@@ -393,16 +409,16 @@ body {
 @media only screen and (min-width: 799px) {
   .card-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr 2fr;
     grid-auto-rows: auto;
     grid-auto-flow: row;
     grid-gap: var(--spacing-2);
     margin-top: var(--spacing-2);
+    width: 100%;
+    transform: none;
   }
 
   .card {
-    width: calc(100% - var(--spacing-4));
-    transform: translateX(0px);
     margin: 0;
     background-color: var(--green-dark);
     box-shadow: var(--box-shadow);
