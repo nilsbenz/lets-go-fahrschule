@@ -21,6 +21,23 @@
   --border-radius: 3px;
 }
 
+@-webkit-keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  10% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @keyframes reveal {
   0% {
     opacity: 0;
@@ -35,6 +52,23 @@
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@-webkit-keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(8vh);
+  }
+
+  10% {
+    opacity: 0;
+    transform: translateY(8vh);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -85,21 +119,26 @@ body {
 }
 
 .heading-section .heading-sign {
-  height: min(28vw, 175px);
-  width: min(28vw, 175px);
+  height: 28vw;
+  max-height: 175px;
+  width: 28vw;
+  max-width: 175px;
   background-color: var(--blue);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: var(--border-radius);
+  font-size: 180px;
   font-size: min(29vw, 180px);
   box-shadow: var(--box-shadow);
   color: var(--typography-light);
+  margin: 14px 40px 0 0;
   margin: min(2vw, 14px) min(7vw, 40px) 0 0;
   font-weight: 600;
 }
 
 .heading-section .header {
+  font-size: 100px;
   font-size: min(16.5vw, 100px);
   color: var(--green-dark);
   margin: 0 0 -10px;
@@ -107,6 +146,7 @@ body {
 }
 
 .heading-section .subheader {
+  font-size: 38px;
   font-size: min(6.27vw, 38px);
   color: var(--green-medium-dark);
   margin: 0;
@@ -114,8 +154,10 @@ body {
 }
 
 .heading-section .name {
+  font-size: 46px;
   font-size: min(7.6vw, 46px);
   color: var(--green-medium);
+  margin: 16px 0 100px;
   margin: min(16px, 3vw) 0 100px;
   font-weight: 600;
   letter-spacing: 0.4px;
@@ -123,8 +165,11 @@ body {
 
 .heading-section .heading-container,
 .heading-section .name {
+  -webkit-animation-duration: 2s;
   animation-duration: 2s;
+  -webkit-animation-name: reveal;
   animation-name: reveal;
+  -webkit-animation-timing-function: ease;
   animation-timing-function: ease;
 }
 
@@ -152,6 +197,7 @@ body {
 
 .panel h3 {
   font-family: 'Staatliches', 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 100px;
   font-size: min(11.5vw, 100px);
   letter-spacing: 0.4px;
   font-weight: 400;
@@ -161,7 +207,8 @@ body {
 
 .panel h4 {
   font-family: 'Staatliches', 'Roboto', Arial, Helvetica, sans-serif;
-  font-size: min(9vw, 60px);
+  font-size: 60px;
+  font-size: min(6.9vw, 60px);
   letter-spacing: 0.2px;
   font-weight: 400;
   margin: 0;
@@ -201,8 +248,11 @@ body {
   letter-spacing: 0.6px;
   padding: var(--spacing-05) var(--spacing-2);
   color: inherit;
+  -webkit-animation-duration: 1.5s;
   animation-duration: 1.5s;
+  -webkit-animation-name: slide-up;
   animation-name: slide-up;
+  -webkit-animation-timing-function: ease;
   animation-timing-function: ease;
   border-radius: var(--border-radius);
   transition: background-color 0.25s ease;
@@ -370,6 +420,18 @@ body {
   margin: 0;
 }
 
+@media only screen and (max-width: 869px) {
+  .panel h3 {
+    font-size: 11.5vw;
+    font-size: min(11.5vw, 100px);
+  }
+
+  .panel h4 {
+    font-size: 6.9vw;
+    font-size: min(6.9vw, 60px);
+  }
+}
+
 @media only screen and (max-width: 699px) {
   .panel-medium .panel-content {
     grid-template-columns: 1fr 1fr;
@@ -403,6 +465,47 @@ body {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 606px) {
+  .heading-section .heading-sign {
+    font-size: 29vw;
+    font-size: min(29vw, 180px);
+  }
+
+  .heading-section .header {
+    font-size: 16.5vw;
+    font-size: min(16.5vw, 100px);
+  }
+
+  .heading-section .subheader {
+    font-size: 6.27vw;
+    font-size: min(6.27vw, 38px);
+  }
+
+  .heading-section .name {
+    font-size: 7.6vw;
+    font-size: min(7.6vw, 46px);
+  }
+
+  .heading-section .heading-sign {
+    margin: 2vw 40px 0 0;
+    margin: min(2vw, 14px) min(7vw, 40px) 0 0;
+  }
+}
+
+@media only screen and (max-width: 571px) {
+  .heading-section .heading-sign {
+    margin: 2vw 7vw 0 0;
+    margin: min(2vw, 14px) min(7vw, 40px) 0 0;
+  }
+}
+
+@media only screen and (max-width: 533px) {
+  .heading-section .name {
+    margin: 3vw 0 100px;
+    margin: min(16px, 3vw) 0 100px;
   }
 }
 
