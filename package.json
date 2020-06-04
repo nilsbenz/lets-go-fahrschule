@@ -22,7 +22,6 @@
     "@node-minify/babel-minify": "^5.3.0",
     "@node-minify/clean-css": "^5.3.0",
     "@node-minify/core": "^5.3.0",
-    "@node-minify/html-minifier": "^5.3.0",
     "ncp": "^2.0.0",
     "rimraf": "^3.0.2"
   }

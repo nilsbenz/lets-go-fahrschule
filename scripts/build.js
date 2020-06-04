@@ -3,7 +3,6 @@ const rimraf = require('rimraf');
 const minify = require('@node-minify/core');
 const cleanCSS = require('@node-minify/clean-css');
 const babelMinify = require('@node-minify/babel-minify');
-const htmlMinifier = require('@node-minify/html-minifier');
 
 ncp.limit = 16;
 
@@ -35,16 +34,6 @@ rimraf('./build', () => {
         compressor: cleanCSS,
         input: './build/css/*.css',
         output: './build/css/$1.css',
-        callback: function (err) {
-          if (err) {
-            console.error(err);
-          }
-        },
-      });
-      minify({
-        compressor: htmlMinifier,
-        input: './build/*.html',
-        output: './build/$1.html',
         callback: function (err) {
           if (err) {
             console.error(err);
