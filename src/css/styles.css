@@ -296,6 +296,10 @@ body {
   box-shadow: var(--box-shadow);
 }
 
+.card a {
+  color: var(--green-light);
+}
+
 .card-big-start {
   grid-column: 1 / -2;
 }
@@ -418,6 +422,10 @@ body {
 .impressum-address p,
 .impressum-contact p {
   margin: 0;
+}
+
+.impressum-contact a {
+  color: var(--green-dark);
 }
 
 @media only screen and (max-width: 869px) {
