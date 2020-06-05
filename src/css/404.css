@@ -1,0 +1,57 @@
+html,
+body {
+  margin: 0;
+  color: #000000;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+main {
+  width: 100vw;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: 'Staatliches', 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 7rem;
+  margin: 0 0 -16px;
+}
+
+h2 {
+  font-family: 'Staatliches', 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0 0 48px;
+}
+
+a {
+  align-self: flex-end;
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #efefef;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #e2e2e2;
+}
+
+button:active {
+  background-color: #d4d4d4;
+}
