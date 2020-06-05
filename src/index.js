@@ -7,3 +7,7 @@ ScrollReveal({ reset: false }).reveal('.about-image', {
   scale: 0.5,
   duration: 800,
 });
+
+cssVars({
+  // Options...
+});

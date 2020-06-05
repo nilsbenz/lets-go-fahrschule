@@ -4,25 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "caddy file-server --listen :3000 --root ./src",
-    "build": "node ./scripts/build.js",
-    "deploy": "npm run build && firebase deploy"
+    "start": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nilsbenz/lets-go-fahrschule.git"
-  },
-  "author": "Nils Benz",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nilsbenz/lets-go-fahrschule/issues"
-  },
-  "homepage": "https://github.com/nilsbenz/lets-go-fahrschule#readme",
-  "dependencies": {
-    "@node-minify/babel-minify": "^5.3.0",
-    "@node-minify/clean-css": "^5.3.0",
-    "@node-minify/core": "^5.3.0",
-    "ncp": "^2.0.0",
-    "rimraf": "^3.0.2"
+  "devDependencies": {
+    "cssnano": "^4.1.10"
   }
 }

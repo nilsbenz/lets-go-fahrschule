@@ -100,7 +100,7 @@ body {
   height: 60vh;
   min-height: 400px;
   border-radius: 0;
-  background-image: url(../images/scene-background.svg);
+  background-image: url(../assets/images/scene-background.svg);
   background-color: var(--green-light);
   background-repeat: no-repeat;
   background-position: center bottom;
